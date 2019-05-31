@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Detail from './components/detail/Detail'
+import DetailPage from './components/detail/DetailPage'
 import Home from './components/home/Home'
 
 class App extends Component {
@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <Router>
         <Route path="/" exact component={Home} />
-        <Route path="/:slug/:id" exact component={Detail} />
+        <Route path="/chi-tiet/:id" exact component={DetailPage} />
       </Router>
     )
   }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 
 class OuterSlider extends Component {
     render() {
@@ -6,8 +7,11 @@ class OuterSlider extends Component {
         let items = prior3.map((object, index) => {
             return <div className="slide_item" key={index}>
                         <article className="art-slider">
-                            <a className="thumb" href={object.url}><img src={object.thumbnail} alt="1" /></a>
-                            <h3 className="hasComment"><a href={object.url} title={object.headline}>{object.headline}</a> <span className="outer-icon"><span className="number">43</span><i className="icon icon-comment" /></span></h3>
+                            <Link to={object.url} className="thumb" title={object.headline} children={<img src={object.thumbnail} alt={object.headline} />}/>
+                            <h3 className="hasComment">
+                                <Link to={object.url}title={object.headline} children={object.headline}/>
+                                <span className="outer-icon"><span className="number">43</span><i className="icon icon-comment" /></span>
+                            </h3>
                         </article>
                     </div>
         })
